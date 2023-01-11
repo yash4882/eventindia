@@ -1,0 +1,19 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyString
+  description: MyText
+  vanue: MyString
+  event-type: MyString
+  start_date: 2023-01-11 16:48:15
+  end_date: 2023-01-11 16:48:15
+  is_paid: false
+
+two:
+  name: MyString
+  description: MyText
+  vanue: MyString
+  event-type: MyString
+  start_date: 2023-01-11 16:48:15
+  end_date: 2023-01-11 16:48:15
+  is_paid: false
