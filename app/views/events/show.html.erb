@@ -1,0 +1,25 @@
+<p><%= @event.name %></p>
+
+<p><%= @event.description %></p>
+
+<p><%= @event.vanue %></p>
+
+<p><%= @event.event_type %></p>
+
+<p><%= @event.start_date %></p>
+
+<p><%= @event.end_date %></p>
+
+<p><%= @event.is_paid %></p>
+
+
+<ul>
+  <li><%= link_to "Edit", edit_event_path(@event) %></li>
+  <li><%= link_to "Destroy", event_path(@event), data: {
+                    turbo_method: :delete,
+                    turbo_confirm: "Are you sure?"
+                  } %></li>
+   <li><%= link_to "Back",:back %></li>
+</ul>
+<!-- Artributes -->
+<!-- "name", "description", "vanue", "event_type", "start_date", "end_date", "is_paid" -->

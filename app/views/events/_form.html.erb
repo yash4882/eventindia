@@ -1,0 +1,45 @@
+
+<%= form_with model: @event do |form| %>
+  <div>
+    <%= form.label :name %><br>
+    <%= form.text_field :name %>
+  </div>
+
+  <div>
+    <%= form.label :description %><br>
+    <%= form.text_area :description %>
+  </div>
+
+  <div>
+    <%= form.label :vanue %><br>
+    <%= form.text_field :vanue %>
+  </div>
+
+  <div>
+    <%= form.label :event_type %><br>
+    <%= form.text_field :event_type %>
+  </div>
+
+  <div>
+    <%= form.label :start_date %><br>
+    <%= form.datetime_field :start_date %>
+  </div>
+
+  <div>
+    <%= form.label :end_date %><br>
+    <%= form.datetime_field :end_date %>
+  </div>
+
+  <div>
+    <%= form.label :is_paid %><br>
+    <%= form.check_box :is_paid %>
+  </div>
+
+  <div>
+    <%= form.submit %>
+    <%= link_to "Back",:back %>
+    
+
+  </div>
+<% end %>
+

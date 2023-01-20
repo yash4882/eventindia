@@ -1,32 +1,29 @@
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Crimson+Text:wght@400;700&display=swap" rel="stylesheet">
+/*body{
+	font-family: 'Josefin Sans', sans-serif;
+}*/
+.navbar-nav  li a{
+	color: white;
+}
+.navbar a.navbar-brand{
+  font-size: 30px;
+  font-weight: 700;
+  color: #d1410c;
+  font-family: 'Crimson Text', serif;
+}
 .about{
-	background-image: url('about-bg.jpg');
-	/*opacity: .5;*/
-	padding: 100px 0;
-	position: relative;
-	z-index: 9999;
-
+	padding-top: 100px;
+	padding-bottom: 100px;
 }
 .about_content h2{
     font-size: 60px;
     font-weight: 800;
     padding-bottom: 20px;
-    background: -webkit-linear-gradient(#eee, #333);
-     -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
 }
 .about_content p{
 	padding-bottom: 20px;
-}
-.overlay{
-	background: #042fff40;
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    width: 100%;
-    display: block;
-    z-index: -1;
 }
 .about .about_img{
 	border-radius: 100%;
@@ -53,4 +50,30 @@
 	left: 25px;
 	z-index: -1;
 
+}
+
+.bg_home{
+	background-image: url("eventbg.jpg");
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: cover;
+	padding: 50px 0px 100px 50px;
+}
+.bg_home svg{
+	width: 33%;
+	display: block;
+	/*padding-top: 30px;*/
+	padding-bottom: 30px;
+}
+.bg_home .home_btn{
+	display: flex;
+	align-items: center;
+	background-color: #d1410c;
+	border-radius: 4px;
+	padding: 12px 16px 12px 18px;
+	color: #fff;
+	font-weight: 600;	
+	font-size: .875rem;
+	line-height: 1.25rem;
+	border: none;
 }
