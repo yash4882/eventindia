@@ -74,3 +74,7 @@ end
 gem 'cssbundling-rails'
 
 gem 'devise' 
+
+gem 'ransack'
+
+gem 'kaminari'

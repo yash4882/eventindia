@@ -1,27 +1,51 @@
-<h2>Log in</h2>
+<section>
+      <div class="box">
+      
+        <div class="square" style="--i:0;"></div>
+        <div class="square" style="--i:1;"></div>
+        <div class="square" style="--i:2;"></div>
+        <div class="square" style="--i:3;"></div>
+        <div class="square" style="--i:4;"></div>
+        <div class="square" style="--i:5;"></div>
+        
+         <div class="containers"> 
+          <div class="form"> 
+            <h2>LOGIN </h2>
+            <%= form_for(resource, as: resource_name, url: session_path(resource_name),html: { data: { turbo: false} } ) do |f| %>
 
-<%= form_for(resource, as: resource_name, url: session_path(resource_name), html: { data: { turbo: false} } ) do |f| %>
+              <div class="inputBx">
+                <%= f.email_field :email, required:"required" ,autofocus: true%>
+                <span>Email Address</span>  
+                <i class="bi bi-envelope fas"></i>
 
-  <div class="field">
-    <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
-  </div>
+              </div>
+              <div class="inputBx password">
+                <%= f.password_field :password, required:"required" ,autocomplete: "current-password", id:"password-input",autofocus: true %>
+                <span>Password</span>
+                <a href="#" class="password-control" onclick="return show_hide_password(this);"></a>
+                <i class="bi bi-key fas"></i>
+              </div>
+              <label class="remember"><input type="checkbox"> Remember</label>
+              <div class="inputBx">
+                <%= f.submit "Log in" %>
+              </div>
+              <%= render "devise/shared/links"%>
+            <%end%>
+          </div>
+        </div>  
+      </div>
+    </section>
 
-  <div class="field">
-    <%= f.label :password %><br />
-    <%= f.password_field :password, autocomplete: "current-password" %>
-  </div>
-
-  <% if devise_mapping.rememberable? %>
-    <div class="field">
-      <%= f.check_box :remember_me %>
-      <%= f.label :remember_me %>
-    </div>
-  <% end %>
-
-  <div class="actions">
-    <%= f.submit "Log in" %>
-  </div>
-<% end %>
-
-<%= render "devise/shared/links" %>
+    <script>
+      function show_hide_password(target){
+        var input = document.getElementById('password-input');
+        if (input.getAttribute('type') == 'password') {
+          target.classList.add('view');
+          input.setAttribute('type', 'text');
+        } else {
+          target.classList.remove('view');
+          input.setAttribute('type', 'password');
+        }
+        return false;
+      }
+    </script>

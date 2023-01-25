@@ -1,6 +1,8 @@
 class EventsController < ApplicationController
   def index
-    @events = Event.all
+    @q = Event.ransack(params[:q])
+    @events = @q.result(distinct: true).page(params[:page])
+    # @events = Event.all
   end
 
   def show
