@@ -78,3 +78,7 @@ gem 'devise'
 gem 'ransack'
 
 gem 'kaminari'
+
+gem 'rolify'
+
+gem 'cancancan'

@@ -23,8 +23,12 @@
         <i class="bi bi-plus-lg"></i>
         <a href=<%= new_event_path %>>Create Events</a>
       </li>
+      <% if current_user.has_role? "admin"%>
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href=<%= root_path%>>Manage Users</a>
+        </li>
       <% end %>
-
+      <% end %>
       <li class="nav-item">
         <a class="nav-link active" aria-current="page" href=<%= root_path%>>Home</a>
       </li>

@@ -1,0 +1,16 @@
+<% if user_signed_in? && current_user.has_role?(:admin)%>
+
+<h1>Here you can manage the user's role and edit them. Only the admin has the authority to manage role, other users not able to see and manage the list of users.</h1>
+
+<ul>
+  <% @users.each do|user|%>
+    <li>Name: <%= user.name%></li>
+    <ul>
+      <li> role: <%= user.roles.map{|e| e.name} %></li>
+      <li> <%= link_to "edit", edit_user_registration_path%></li>
+      <li> <%= select_tag "whatever", options_for_select([user.roles.map{|e| e.name},[Role.all.pluck(:name)]], include_blank: true) %></li>
+    </ul>
+  <%end %>
+</ul>
+
+<% end %>
