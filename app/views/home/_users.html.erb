@@ -1,6 +1,6 @@
 <% if user_signed_in? && current_user.has_role?(:admin)%>
 
-<h1>Here you can manage the user's role and edit them. Only the admin has the authority to manage role, other users not able to see and manage the list of users.</h1>
+<h1>you can manage role</h1>
 
 <ul>
   <% @users.each do|user|%>
