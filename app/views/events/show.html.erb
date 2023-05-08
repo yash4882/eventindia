@@ -1,23 +1,55 @@
-<p><%= @event.name %></p>
+<div class="container mt-4">
+  <div class="row">
+    <div class="col">
+      <h2>Event Description: </h2>
+      <p><%= @event.name %></p>
 
-<p><%= @event.description %></p>
+      <p><%= @event.description %></p>
 
-<p><%= @event.venue %></p>
+      <p><%= @event.venue %></p>
 
-<p><%= @event.event_type %></p>
+      <p><%= @event.event_type %></p>
 
-<p><%= @event.start_date %></p>
+      <p><%= @event.start_date %></p>
 
-<p><%= @event.end_date %></p>
+      <p><%= @event.end_date %></p>
 
-<p><%= @event.is_paid %></p>
+      <p><%= @event.is_paid %></p>
 
+      Total members:<p><%= @event.members.count %></p>
+    </div>
 
-<ul>
-  <li><%= link_to "Edit", edit_event_path(@event) %></li>
-  <li><%= link_to "Delete", event_path(@event), data: {
-                    turbo_method: :delete,
-                    turbo_confirm: "Are you sure?"
-                  } %></li>
-   <li><%= link_to "Back", events_path %></li>
-</ul>
+    <div class="col">
+      <h4>List of members: </h4>
+      <table class="table">
+        <thead>
+          <tr>
+            <th scope="col">Member Id</th>
+            <th scope="col">Name</th>
+            <th scope="col">Age</th>
+            <th scope="col">Committee</th>
+          </tr>
+        </thead>
+        <tbody>  
+          <%= render @event.members %>
+        </tbody>
+      </table>
+    </div>
+    <div class="col" >
+      <%= render 'members/form' %>
+    </div>
+    <div class="col">
+      <h2>Activities: </h2>
+    </div>
+  </div>
+</div>
+<div class="container">
+  <ul class="list-group list-group-flush">
+    <li class="list-group-item"><%= link_to "Edit", edit_event_path(@event) %></li>
+    <li class="list-group-item"><%= link_to "Delete", event_path(@event), data: {
+                      turbo_method: :delete,
+                      turbo_confirm: "Are you sure?"
+                    } %></li>
+     <li class="list-group-item"><%= link_to "Back", events_path %></li>
+  </ul>
+</div>

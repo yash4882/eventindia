@@ -1,0 +1,16 @@
+<h4>Add Members</h4>
+<%= form_with model: [ @event, @event.members.build ] do |form| %>
+  <p>
+    <%= form.label :name %><br>
+    <%= form.text_field :name %>
+  </p>
+  <p>
+    <%= form.label :age %><br>
+    <%= form.text_field :age %>
+  </p>
+  <p>
+    <%= form.label :committee %><br>
+    <%= form.text_field :committee %>
+  </p>
+  <%= form.submit %>
+<% end %>

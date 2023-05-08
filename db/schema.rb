@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_04_30_083812) do
+ActiveRecord::Schema[7.0].define(version: 2023_05_05_055916) do
   create_table "events", force: :cascade do |t|
     t.string "name"
     t.text "description"
@@ -21,6 +21,16 @@ ActiveRecord::Schema[7.0].define(version: 2023_04_30_083812) do
     t.boolean "is_paid"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "members", force: :cascade do |t|
+    t.string "name"
+    t.integer "age"
+    t.string "committee"
+    t.integer "event_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["event_id"], name: "index_members_on_event_id"
   end
 
   create_table "roles", force: :cascade do |t|
@@ -61,4 +71,5 @@ ActiveRecord::Schema[7.0].define(version: 2023_04_30_083812) do
     t.index ["user_id"], name: "index_users_roles_on_user_id"
   end
 
+  add_foreign_key "members", "events"
 end
