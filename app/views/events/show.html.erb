@@ -40,6 +40,20 @@
     </div>
     <div class="col">
       <h2>Activities: </h2>
+      <table class="table">
+        <thead>
+          <tr>
+            <th scope="col">Activity Id</th>
+            <th scope="col">Name</th>
+          </tr>
+        </thead>
+        <tbody>  
+          <%= render @event.activities %>
+        </tbody>
+      </table>
+    </div>
+    <div class="col" >
+      <%= render 'activities/form' %>
     </div>
   </div>
 </div>

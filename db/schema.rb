@@ -10,7 +10,15 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_05_05_055916) do
+ActiveRecord::Schema[7.0].define(version: 2023_05_09_054910) do
+  create_table "activities", force: :cascade do |t|
+    t.string "name"
+    t.integer "event_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["event_id"], name: "index_activities_on_event_id"
+  end
+
   create_table "events", force: :cascade do |t|
     t.string "name"
     t.text "description"
@@ -71,5 +79,6 @@ ActiveRecord::Schema[7.0].define(version: 2023_05_05_055916) do
     t.index ["user_id"], name: "index_users_roles_on_user_id"
   end
 
+  add_foreign_key "activities", "events"
   add_foreign_key "members", "events"
 end
